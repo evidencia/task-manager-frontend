@@ -1,5 +1,5 @@
 import SidebarButton from './SidebarButton'
-
+import { HomeIcon, TasksIcon } from '../assets/icons/index'
 function Sidebar() {
   return (
     <div className="h-screen w-64 bg-white">
@@ -12,8 +12,14 @@ function Sidebar() {
       </div>
 
       <div className="flex flex-col gap-2 p-2">
-        <SidebarButton variant="unselected">Inicio </SidebarButton>
-        <SidebarButton variant="selected">Minhas Tarefas </SidebarButton>
+        <SidebarButton variant="unselected">
+          <HomeIcon />
+          Inicio
+        </SidebarButton>
+        <SidebarButton variant="selected">
+          <TasksIcon />
+          Minhas Tarefas{' '}
+        </SidebarButton>
       </div>
     </div>
   )

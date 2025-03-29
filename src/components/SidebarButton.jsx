@@ -1,4 +1,4 @@
-function SidebarButton({ children, variant }) {
+function SidebarButton({ children, variant, icon }) {
   const getVariantClasses = () => {
     if (variant === 'unselected') {
       return 'text-[#35383E]'
@@ -10,7 +10,12 @@ function SidebarButton({ children, variant }) {
   }
 
   return (
-    <a className={`rounded-lg px-6 py-3 ${getVariantClasses()}`}>{children}</a>
+    <a
+      className={`flex items-center gap-2 rounded-lg px-6 py-3 ${getVariantClasses()}`}
+    >
+      {icon}
+      {children}
+    </a>
   )
 }
 
