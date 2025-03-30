@@ -6,6 +6,7 @@ import {
   SunIcon,
   TrashIcon,
 } from '../assets/icons'
+import TasksSeparator from './TasksSeparator'
 
 function Tasks() {
   return (
@@ -34,22 +35,19 @@ function Tasks() {
       <div className="rounded-xl bg-white p-6">
         <div className="space-y-3">
           <div className="flex gap-2 border-b border-solid border-[#F4F4F4] pb-1">
-            <SunIcon />
-            <p className="text-sm text-[#9A9C9F]">Morning</p>
+            <TasksSeparator title="Morning" icon={<SunIcon />} />
           </div>
         </div>
 
         <div className="my-6 space-y-3">
           <div className="flex gap-2 border-b border-solid border-[#F4F4F4] pb-1">
-            <CloudSunIcon />
-            <p className="text-sm text-[#9A9C9F]">Afternoon</p>
+            <TasksSeparator title="Afternoon" icon={<CloudSunIcon />} />
           </div>
         </div>
 
         <div className="space-y-3">
           <div className="flex gap-2 border-b border-solid border-[#F4F4F4] pb-1">
-            <MoonIcon />
-            <p className="text-sm text-[#9A9C9F]">Night</p>
+            <TasksSeparator title="Night" icon={<MoonIcon />} />
           </div>
         </div>
       </div>
