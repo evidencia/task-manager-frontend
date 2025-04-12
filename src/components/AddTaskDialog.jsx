@@ -13,6 +13,7 @@ function AddTaskDialog({ isOpen, handleClose, handleSubmit }) {
   const [title, setTitle] = useState('')
   const [time, setTime] = useState('morning')
   const [description, setDescription] = useState('')
+  const [errors, setErrors] = useState([])
 
   const nodeRef = useRef()
 
@@ -25,8 +26,32 @@ function AddTaskDialog({ isOpen, handleClose, handleSubmit }) {
   }, [isOpen])
 
   const handleSaveClick = () => {
-    if (!title.trim() || !time.trim() || !description.trim()) {
-      return alert('preencha todos os campos.')
+    const newErrors = []
+
+    if (!title.trim()) {
+      newErrors.push({
+        inputName: 'title',
+        message: 'O titulo é obrigatório.',
+      })
+    }
+
+    if (!time.trim()) {
+      newErrors.push({
+        inputName: 'time',
+        message: 'O horário é obrigatório.',
+      })
+    }
+
+    if (!title.trim()) {
+      newErrors.push({
+        inputName: 'description',
+        message: 'A descrição é obrigatório.',
+      })
+    }
+
+    if (newErrors.length > 0) {
+      setErrors(newErrors)
+      return
     }
 
     handleSubmit({
@@ -39,6 +64,12 @@ function AddTaskDialog({ isOpen, handleClose, handleSubmit }) {
 
     handleClose()
   }
+
+  const titleError = errors.find((error) => error.inputName === 'title')
+  const timeError = errors.find((error) => error.inputName === 'time')
+  const descriptionError = errors.find(
+    (error) => error.inputName === 'description'
+  )
 
   return (
     <CSSTransition
@@ -68,11 +99,12 @@ function AddTaskDialog({ isOpen, handleClose, handleSubmit }) {
                   label="Titulo"
                   placeholder="Insira o titulo da tarefa"
                   value={title}
+                  errorMessage={titleError?.message}
                   onChange={(e) => setTitle(e.target.value)}
                 />
-
                 <TimeSelect
                   value={time}
+                  errorMessage={timeError?.message}
                   onChange={(e) => setTime(e.target.value)}
                 />
 
@@ -81,6 +113,7 @@ function AddTaskDialog({ isOpen, handleClose, handleSubmit }) {
                   label="Descrição"
                   placeholder="Descreva a tarefa"
                   value={description}
+                  errorMessage={descriptionError?.message}
                   onChange={(e) => setDescription(e.target.value)}
                 />
 
