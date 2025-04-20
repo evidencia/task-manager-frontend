@@ -32,14 +32,14 @@ function TaskItem({ task, handleCheckboxClick, handleDeleteClick }) {
           />
           {task.status === 'done' && <CheckIcon />}
           {task.status === 'in_progress' && (
-            <LoaderIcon className="animate-spin text-brand-white text-white" />
+            <LoaderIcon className="animate-spin text-brand-white" />
           )}
         </label>
         {task.title}
       </div>
 
       <div className="flex items-center gap-2">
-        <Button variant="ghost" onClick={() => handleDeleteClick(task.id)}>
+        <Button color="ghost" onClick={() => handleDeleteClick(task.id)}>
           <TrashIcon className="text-brand-text-gray" />
         </Button>
 
