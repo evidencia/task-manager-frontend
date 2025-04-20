@@ -11,7 +11,7 @@ function TasksSeparator({ title, icon }) {
 
 TasksSeparator.protTypes = {
   title: PropTypes.string.isRequired,
-  icon: PropTypes.element.isRequired,
+  icon: PropTypes.node.isRequired,
 }
 
 export default TasksSeparator
