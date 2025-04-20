@@ -5,7 +5,7 @@ function SidebarButton({ children, variant, icon }) {
     }
 
     if (variant === 'selected') {
-      return 'bg-[#E6F7F8] text-[#00ADB5]'
+      return 'bg-brand-primary bg-opacity-15 text-brand-primary'
     }
   }
 
