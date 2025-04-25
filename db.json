@@ -29,17 +29,10 @@
       "status": "in_progress"
     },
     {
-      "id": "5",
-      "title": "Descansar",
-      "description": "Assistir um filme com a familia",
-      "time": "evening",
-      "status": "not_started"
-    },
-    {
-      "id": "6",
+      "id": "91cb7710-616d-4544-9a16-36d105ba63ae",
       "title": "Meditar",
-      "description": "Meditar pro 10 minutos",
       "time": "evening",
+      "description": "Yoga",
       "status": "not_started"
     }
   ]

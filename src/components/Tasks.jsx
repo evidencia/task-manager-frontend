@@ -68,7 +68,7 @@ function Tasks() {
     setTasks(newTasks)
   }
 
-  const handleTaskDeleteClick = (taskId) => {
+  const onDeleteTaskSucess = async (taskId) => {
     const newTasks = tasks.filter((task) => task.id !== taskId)
     setTasks(newTasks)
 
@@ -129,7 +129,7 @@ function Tasks() {
               key={task.id}
               task={task}
               handleCheckboxClick={handleTaskCheckboxClick}
-              handleDeleteClick={handleTaskDeleteClick}
+              onDeleteSucess={onDeleteTaskSucess}
             />
           ))}
         </div>
@@ -142,7 +142,7 @@ function Tasks() {
               key={task.id}
               task={task}
               handleCheckboxClick={handleTaskCheckboxClick}
-              handleDeleteClick={handleTaskDeleteClick}
+              onDeleteSucess={onDeleteTaskSucess}
             />
           ))}
         </div>
@@ -155,7 +155,7 @@ function Tasks() {
               key={task.id}
               task={task}
               handleCheckboxClick={handleTaskCheckboxClick}
-              handleDeleteClick={handleTaskDeleteClick}
+              onDeleteSucess={onDeleteTaskSucess}
             />
           ))}
         </div>
