@@ -6,19 +6,22 @@ import { createPortal } from 'react-dom'
 import { CSSTransition } from 'react-transition-group'
 import { v4 } from 'uuid'
 
+import { LoaderIcon } from '../assets/icons'
 import Button from './Button'
 import Input from './Input'
 import TimeSelect from './TimeSelect'
 
-function AddTaskDialog({ isOpen, handleClose, handleSubmit }) {
+function AddTaskDialog({ isOpen, handleClose, onSubmitSucess, onSubmitError }) {
   const [errors, setErrors] = useState([])
+  const [dialogIsLoading, setDialogIsLoading] = useState(false)
 
   const nodeRef = useRef()
   const titleRef = useRef()
   const descriptionRef = useRef()
   const timeRef = useRef()
 
-  const handleSaveClick = () => {
+  const handleSaveClick = async () => {
+    setDialogIsLoading(false)
     const newErrors = []
 
     const title = titleRef.current.value
@@ -48,17 +51,22 @@ function AddTaskDialog({ isOpen, handleClose, handleSubmit }) {
     setErrors(newErrors)
 
     if (newErrors.length > 0) {
-      return
+      return setDialogIsLoading(false)
     }
 
-    handleSubmit({
-      id: v4(),
-      title,
-      time,
-      description,
-      status: 'not_started',
+    const task = { id: v4(), title, time, description, status: 'not_started' }
+    const response = await fetch('http://localhost:3000/tasks', {
+      method: 'POST',
+      body: JSON.stringify(task),
     })
 
+    if (!response.ok) {
+      setDialogIsLoading(false)
+      return onSubmitError()
+    }
+
+    onSubmitSucess(task)
+    setDialogIsLoading(true)
     handleClose()
   }
 
@@ -121,8 +129,10 @@ function AddTaskDialog({ isOpen, handleClose, handleSubmit }) {
                   <Button
                     className="w-full"
                     size="large"
+                    disabled={dialogIsLoading}
                     onClick={handleSaveClick}
                   >
+                    {dialogIsLoading && <LoaderIcon className="animate-spin" />}
                     Salvar
                   </Button>
                 </div>

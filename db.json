@@ -15,25 +15,11 @@
       "status": "done"
     },
     {
-      "id": "3",
-      "title": "Treinar",
-      "description": "Treinar para a competição de natação",
-      "time": "afternoon",
-      "status": "in_progress"
-    },
-    {
       "id": "4",
       "title": "Fazer compras",
       "description": "Comprar os ingredientes para o jantar",
       "time": "morning",
       "status": "in_progress"
-    },
-    {
-      "id": "91cb7710-616d-4544-9a16-36d105ba63ae",
-      "title": "Meditar",
-      "time": "evening",
-      "description": "Yoga",
-      "status": "not_started"
     }
   ]
 }
