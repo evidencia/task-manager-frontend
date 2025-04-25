@@ -1,45 +1,17 @@
 {
   "tasks": [
     {
-      "id": "1",
-      "title": "Estudar FSC",
-      "description": "Estudar para a prova de FSC",
-      "time": "morning",
-      "status": "done"
-    },
-    {
-      "id": "2",
-      "title": "Ler livro FSC",
-      "description": "Ler o livro de matematica",
-      "time": "morning",
-      "status": "done"
-    },
-    {
-      "id": "4",
-      "title": "Fazer compras",
-      "description": "Comprar os ingredientes para o jantar",
-      "time": "morning",
-      "status": "in_progress"
-    },
-    {
-      "id": "d4c1282a-3bc5-4be2-b060-7e47b19eb6ef",
-      "title": "n",
-      "time": "morning",
-      "description": "nm",
-      "status": "not_started"
-    },
-    {
-      "id": "096991a3-20f9-4c20-8ba1-b74569fb7c92",
-      "title": "ola",
-      "time": "afternoon",
-      "description": "ss",
-      "status": "not_started"
-    },
-    {
-      "id": "109673ff-e202-46ae-b11d-c352a7fc4d2d",
-      "title": "gg",
+      "id": "18f52888-ed5d-43ac-9861-5a7018e622f9",
+      "title": "Estudar Fsc",
       "time": "evening",
-      "description": "nnn",
+      "description": "Estudar muito",
+      "status": "not_started"
+    },
+    {
+      "id": "77e78ea0-dfdc-4188-bf3e-1bf3578e9bb6",
+      "title": "Meditar",
+      "time": "morning",
+      "description": "Yoga",
       "status": "not_started"
     }
   ]
