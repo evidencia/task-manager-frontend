@@ -8,7 +8,6 @@ import {
   SunIcon,
   TrashIcon,
 } from '../assets/icons'
-import TASKS from '../constants/tasks'
 import AddTaskDialog from './AddTaskDialog'
 import Button from './Button'
 import TaskItem from './TaskItem'
@@ -76,7 +75,18 @@ function Tasks() {
     toast.success('Tarefa deletada com sucesso!')
   }
 
-  const handleAddTaskSubmit = (task) => {
+  const handleAddTaskSubmit = async (task) => {
+    const response = await fetch('http://localhost:3000/tasks', {
+      method: 'POST',
+      body: JSON.stringify(task),
+    })
+
+    if (!response.ok) {
+      return toast.error(
+        'Erro ao adicionar a tarefa.Por favor, tente novamente.'
+      )
+    }
+
     setTasks([...tasks, task])
     toast.success('Tarefa adicionada com sucesso!')
   }
