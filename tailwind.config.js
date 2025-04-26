@@ -14,7 +14,7 @@ export default {
           'text-gray': '#9A9C9F',
           'light-gray': '#EEEEEE',
           white: '#FFFFFF',
-          background: '##F8F8F8',
+          background: '#F8F8F8',
           border: '#F4F4F5',
           process: '#FFAA04',
           danger: '#EF4444',
