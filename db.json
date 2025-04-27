@@ -6,13 +6,6 @@
       "time": "evening",
       "description": "Estudar muito",
       "status": "not_started"
-    },
-    {
-      "id": "77e78ea0-dfdc-4188-bf3e-1bf3578e9bb6",
-      "title": "123",
-      "time": "morning",
-      "description": "123",
-      "status": "not_started"
     }
   ]
 }
